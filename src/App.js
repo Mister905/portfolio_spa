@@ -43,7 +43,11 @@ function App() {
           </div>
         </div>
         <div className="col m4">
-          <img src={laptop} class="responsive-img laptop-img-border" alt="Laptop" />
+          <img
+            src={laptop}
+            class="responsive-img laptop-img-border"
+            alt="Laptop"
+          />
         </div>
       </div>
       <div className="row skills-row">
@@ -186,7 +190,7 @@ function App() {
           <div className="col m4 offset-m4 center-align bg-white contact-col">
             <h1 class="fs-2rem dark-purple fw-bold">Contact</h1>
             <div className="row">
-              <form name="contact" method="post" data-netlify="true">
+              <form name="contact" method="post">
                 <div class="input-field col s12">
                   <input id="name" name="name" type="text" class="validate" />
                   <label for="name" class="active fw-bold">
