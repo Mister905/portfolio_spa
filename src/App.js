@@ -1,7 +1,7 @@
-import heraldry from "./assets/heraldry_optimized.png";
+import heraldry from "./assets/heraldry.webp";
 import github from "./assets/github_optimized.png";
 import linkedin from "./assets/linkedin_optimized.png";
-import test from "./assets/1_optimized.jpg";
+import laptop from "./assets/laptop.webp";
 
 function App() {
   return (
@@ -17,12 +17,12 @@ function App() {
       <div className="row social-media-row">
         <div className="col m2 offset-m4">
           <a href="https://github.com/Mister905?tab=repositories">
-            <img src={github} class="responsive-img" />
+            <img src={github} class="responsive-img" alt="GitHub" />
           </a>
         </div>
         <div className="col m2">
           <a href="https://www.linkedin.com/in/james-mccarthy-159230199/">
-            <img src={linkedin} class="responsive-img" />
+            <img src={linkedin} class="responsive-img" alt="LinkedIn" />
           </a>
         </div>
       </div>
@@ -43,7 +43,7 @@ function App() {
           </div>
         </div>
         <div className="col m4">
-          <img src={test} class="responsive-img laptop-img-border" />
+          <img src={laptop} class="responsive-img laptop-img-border" alt="Laptop" />
         </div>
       </div>
       <div className="row skills-row">
