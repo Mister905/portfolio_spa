@@ -1,0 +1,189 @@
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase::after {
+  content: "";
+  height: 100vh;
+  width: 100%;
+  background-image: url("./assets/fibre_optimized.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  transition: all 1000ms;
+}
+
+.showcase:hover::after {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
+.showcase:hover .content {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 105px;
+  margin-left: -145px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  transition: all 1000ms;
+}
+
+.content .logo {
+  height: 180px;
+  width: 180px;
+}
+
+.content .title {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.content .text {
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.social-media-row {
+  background: #300f4f;
+}
+
+.laptop-img-border {
+  background: linear-gradient(to right, #b49ec8, #6a468a);
+  padding: 3px;
+}
+
+.about-me-col {
+  padding: 23px !important;
+}
+
+.module-border-wrap {
+  background: linear-gradient(to right, #6a468a, #b49ec8);
+  padding: 3px;
+}
+
+.module {
+  background: #191919;
+  padding: 61px 24px;
+}
+
+.fs-2rem {
+  font-size: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.collection-item-custom {
+  background: transparent !important;
+}
+
+.skills-row {
+  background: #300f4f;
+  margin-bottom: 0px;
+  padding-top: 25px;
+}
+
+.about-row {
+  padding: 50px 0px;
+}
+
+.dark-purple {
+  color: #300f4f;
+}
+
+.bg-white {
+  background: white;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.btn-submit {
+  background: #300f4f;
+  margin-right: 10px;
+}
+
+.input-field input {
+  color: #300f4f !important;
+}
+
+/* label color */
+.input-field label {
+  color: #300f4f !important;
+}
+/* label focus color */
+.input-field input[type]:focus + label {
+  color: #300f4f;
+}
+/* label underline focus color */
+.input-field input[type]:focus {
+  border-bottom: 1px solid #300f4f !important;
+  box-shadow: 0 1px 0 0 #300f4f !important;
+}
+/* valid color */
+.input-field input[type].valid {
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+/* invalid color */
+.input-field input[type].invalid {
+  border-bottom: 1px solid #000 !important;
+  box-shadow: 0 1px 0 0 #000 !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000 !important;
+}
+
+/* label focus color */
+.input-field textarea + label {
+  color: #300f4f !important;
+}
+/* label underline focus color */
+.input-field textarea:focus {
+  border-bottom: 1px solid #300f4f !important;
+  box-shadow: 0 1px 0 0 #300f4f !important;
+}
+
+.input-field textarea:focus + label {
+  color: #300f4f !important;
+}
+
+.contact-col {
+  margin-top: 67px;
+  margin-bottom: 67px;
+}
+
+.btn-submit:hover {
+  background: white;
+  color: #300f4f;
+}
+
+.contact-row {
+  background: black;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
