@@ -192,7 +192,7 @@ function App() {
             <div className="row">
               <form name="contact" method="POST">
                 <input type="hidden" name="form-name" value="contact" />
-                <div class="input-field col s12">
+                <div class="input-field col s12 mt-50">
                   <input name="name" type="text" />
                   <label for="name" class="active fw-bold">
                     Your Name
@@ -220,27 +220,6 @@ function App() {
                   Submit
                 </button>
               </form>
-              {/* <form name="contact" method="post">
-                <input type="hidden" name="form-name" value="contact" />
-                <p>
-                  <label>
-                    Your Name: <input type="text" name="name" />
-                  </label>
-                </p>
-                <p>
-                  <label>
-                    Your Email: <input type="email" name="email" />
-                  </label>
-                </p>
-                <p>
-                  <label>
-                    Message: <textarea name="message"></textarea>
-                  </label>
-                </p>
-                <p>
-                  <button type="submit">Send</button>
-                </p>
-              </form> */}
             </div>
           </div>
         </div>
