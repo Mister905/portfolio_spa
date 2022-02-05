@@ -190,7 +190,7 @@ function App() {
           <div className="col m4 offset-m4 center-align bg-white contact-col">
             <h1 class="fs-2rem dark-purple fw-bold">Contact</h1>
             <div className="row">
-              <form name="contact-form" method="POST" data-netlify="true">
+              {/* <form name="contact-form" method="POST" data-netlify="true">
                 <div class="input-field col s12">
                   <input id="name" name="name" type="text" class="validate" />
                   <label for="name" class="active fw-bold">
@@ -219,6 +219,27 @@ function App() {
                 >
                   Submit
                 </button>
+              </form> */}
+              <form name="contact" method="post">
+                <input type="hidden" name="form-name" value="contact" />
+                <p>
+                  <label>
+                    Your Name: <input type="text" name="name" />
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    Your Email: <input type="email" name="email" />
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    Message: <textarea name="message"></textarea>
+                  </label>
+                </p>
+                <p>
+                  <button type="submit">Send</button>
+                </p>
               </form>
             </div>
           </div>
