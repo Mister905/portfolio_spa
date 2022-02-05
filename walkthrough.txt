@@ -1,3 +1,5 @@
 https://www.youtube.com/watch?v=vCaSywNc9wQ&ab_channel=SimplyDev
 
 https://dev.to/kapi1/solved-treating-warnings-as-errors-because-of-process-env-ci-true-bk5
+
+https://dev.to/easybuoy/setting-up-domain-with-namecheap-netlify-1a4d
