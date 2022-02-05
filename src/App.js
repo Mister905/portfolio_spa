@@ -192,20 +192,19 @@ function App() {
             <div className="row">
               <form name="contact" method="POST">
                 <div class="input-field col s12">
-                  <input id="name" name="name" type="text" class="validate" />
+                  <input name="name" type="text" />
                   <label for="name" class="active fw-bold">
                     Your Name
                   </label>
                 </div>
                 <div class="input-field col s12">
-                  <input id="email" name="email" type="text" class="validate" />
+                  <input name="email" type="text" />
                   <label for="email" class="active fw-bold">
                     Your Email
                   </label>
                 </div>
                 <div class="input-field col s12">
                   <textarea
-                    id="message"
                     name="message"
                     class="materialize-textarea"
                   ></textarea>
