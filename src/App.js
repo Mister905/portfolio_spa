@@ -190,7 +190,8 @@ function App() {
           <div className="col m4 offset-m4 center-align bg-white contact-col">
             <h1 class="fs-2rem dark-purple fw-bold">Contact</h1>
             <div className="row">
-              {/* <form name="contact" method="POST">
+              <form name="contact" method="POST">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="input-field col s12">
                   <input name="name" type="text" />
                   <label for="name" class="active fw-bold">
@@ -218,8 +219,8 @@ function App() {
                 >
                   Submit
                 </button>
-              </form> */}
-              <form name="contact" method="post">
+              </form>
+              {/* <form name="contact" method="post">
                 <input type="hidden" name="form-name" value="contact" />
                 <p>
                   <label>
@@ -239,7 +240,7 @@ function App() {
                 <p>
                   <button type="submit">Send</button>
                 </p>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>
