@@ -179,7 +179,7 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="row mb-0 project-row">
+        {/* <div className="row mb-0 project-row">
           <div className="col m12">
             <h1 class="center-align fs-2rem fw-bold">Projects</h1>
             <div className="row mt-50 mb-50">
@@ -206,7 +206,32 @@ function App() {
               </div>
             </div>
           </div>
+        </div> */}
+
+        <div className="row mb-0 project-row">
+          <div className="col m12">
+            <h1 class="center-align fs-2rem fw-bold">Projects</h1>
+            <div className="row mt-50 mb-50">
+              <div className="col m4 offset-m4 s12 offset-m2">
+                <div class="center-align">
+                  <a href="http://jeopardy.xyz/" target="_blank">
+                    <img src={jeopardy} class="responsive-img gradient-border" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="row mb-50">
+              <div className="col m4 offset-m4 s12 offset-m2">
+                <div class="center-align">
+                  <a href="https://mernbook-905.herokuapp.com/" target="_blank">
+                    <img src={mernbook} class="responsive-img gradient-border" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div className="row contact-row">
           <div className="col m4 offset-m4 s12 center-align bg-white contact-col">
             <h1 class="fs-2rem dark-purple fw-bold">Contact</h1>

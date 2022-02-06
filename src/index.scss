@@ -205,3 +205,9 @@ body {
 .project-row {
   background: #000;
 }
+
+.gradient-border {
+  border-style: solid;
+  border-width: 3px;
+  border-image: linear-gradient(45deg, #6a468a, #b49ec8) 1;
+}
