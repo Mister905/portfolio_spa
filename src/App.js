@@ -1,7 +1,8 @@
 import heraldry from "./assets/heraldry.webp";
 import github from "./assets/github_optimized.png";
 import linkedin from "./assets/linkedin_optimized.png";
-import laptop from "./assets/laptop.webp";
+import jeopardy from "./assets/jeopardy.png";
+import mernbook from "./assets/mernbook.png";
 
 function App() {
   return (
@@ -15,20 +16,19 @@ function App() {
       </div>
 
       <div className="row social-media-row">
-        <div className="col m2 offset-m4">
+        <div className="col m2 offset-m4 s6">
           <a href="https://github.com/Mister905?tab=repositories">
             <img src={github} class="responsive-img" alt="GitHub" />
           </a>
         </div>
-        <div className="col m2">
+        <div className="col m2 s6">
           <a href="https://www.linkedin.com/in/james-mccarthy-159230199/">
             <img src={linkedin} class="responsive-img" alt="LinkedIn" />
           </a>
         </div>
       </div>
-
       <div className="row about-row">
-        <div className="col m4 offset-m2">
+        <div className="col m4 offset-m4 s12">
           <div class="module-border-wrap">
             <div class="module">
               <h1 class="fs-2rem fw-bold">About Me</h1>
@@ -42,22 +42,15 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="col m4">
-          <img
-            src={laptop}
-            class="responsive-img laptop-img-border"
-            alt="Laptop"
-          />
-        </div>
       </div>
       <div className="row skills-row">
         <div className="row">
-          <div className="col m12 center-align">
+          <div className="col m12 s12 center-align">
             <h1 class="fs-2rem fw-bold">Programming Skills</h1>
           </div>
         </div>
         <div className="row">
-          <div className="col m3 offset-m3">
+          <div className="col m3 offset-m3 s12">
             <ul class="collection">
               <li class="collection-item collection-item-custom">
                 HTML
@@ -121,7 +114,7 @@ function App() {
               </li>
             </ul>
           </div>
-          <div className="col m3">
+          <div className="col m3 s12">
             <ul class="collection">
               <li class="collection-item collection-item-custom">
                 CSS
@@ -186,8 +179,36 @@ function App() {
             </ul>
           </div>
         </div>
+        <div className="row mb-0 project-row">
+          <div className="col m12">
+            <h1 class="center-align fs-2rem fw-bold">Projects</h1>
+            <div className="row mt-50 mb-50">
+              <div className="col m3 s12 offset-m2">
+                <div class="module-border-wrap">
+                  <div class="module">
+                    <a href="http://jeopardy.xyz/" target="_blank">
+                      <img src={jeopardy} class="responsive-img" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col m3 offset-m2  s12">
+                <div class="module-border-wrap">
+                  <div class="module">
+                    <a
+                      href="https://mernbook-905.herokuapp.com/"
+                      target="_blank"
+                    >
+                      <img src={mernbook} class="responsive-img" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="row contact-row">
-          <div className="col m4 offset-m4 center-align bg-white contact-col">
+          <div className="col m4 offset-m4 s12 center-align bg-white contact-col">
             <h1 class="fs-2rem dark-purple fw-bold">Contact</h1>
             <div className="row">
               <form name="contact" method="POST">
