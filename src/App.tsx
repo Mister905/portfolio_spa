@@ -2,19 +2,14 @@ import React, { useEffect, useState } from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
-import heraldry from "./assets/heraldry.webp";
+import heraldry from "./assets/heraldry.png";
 import github from "./assets/github_optimized.png";
 import linkedin from "./assets/linkedin_optimized.png";
-import parallax from "./assets/parallax.jpg";
-import fibre from "./assets/fibre.jpg";
-import react from "./assets/react.jpg";
-import whiteFibre from "./assets/white_fibre.jpg";
-import hamilton from "./assets/hamilton.jpg";
+import parallax from "./assets/white_fibre.jpg";
 
 // TypeScript interfaces
 interface Skill {
   name: string;
-  level: number;
   category: 'frontend' | 'backend' | 'tools' | 'other';
 }
 
@@ -36,40 +31,41 @@ interface NavigationItem {
 
 // Data
 const skills: Skill[] = [
-  { name: "React", level: 90, category: 'frontend' },
-  { name: "TypeScript", level: 85, category: 'frontend' },
-  { name: "JavaScript", level: 90, category: 'frontend' },
-  { name: "HTML/CSS", level: 95, category: 'frontend' },
-  { name: "Node.js", level: 80, category: 'backend' },
-  { name: "Python", level: 75, category: 'backend' },
-  { name: "Java", level: 70, category: 'backend' },
-  { name: "MongoDB", level: 75, category: 'backend' },
-  { name: "SQL", level: 80, category: 'backend' },
-  { name: "Git", level: 85, category: 'tools' },
-  { name: "Linux", level: 80, category: 'tools' },
-  { name: "Docker", level: 70, category: 'tools' },
+  // Programming Languages
+  { name: "HTML", category: 'frontend' },
+  { name: "CSS", category: 'frontend' },
+  { name: "JavaScript", category: 'frontend' },
+  { name: "jQuery", category: 'frontend' },
+  { name: "React", category: 'frontend' },
+  { name: "Redux", category: 'frontend' },
+  { name: "TypeScript", category: 'frontend' },
+  { name: "Node.js", category: 'backend' },
+  { name: "PHP", category: 'backend' },
+  { name: "Java", category: 'backend' },
+  { name: "Python", category: 'backend' },
+  { name: "Perl", category: 'backend' },
+  { name: "ColdFusion", category: 'backend' },
+  { name: "SQL", category: 'backend' },
+  { name: "MongoDB", category: 'backend' },
+  // Tools & Technologies
+  { name: "Git", category: 'tools' },
+  { name: "Bash", category: 'tools' },
+  { name: "Linux", category: 'tools' },
+  // General Skills
+  { name: "Collaboration", category: 'other' },
+  { name: "Technical Documentation", category: 'other' },
+  { name: "Troubleshooting", category: 'other' },
+  { name: "User Experience (UX) Design", category: 'other' },
 ];
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "Modern responsive portfolio built with React and TypeScript, featuring smooth animations and parallax effects.",
-    technologies: ["React", "TypeScript", "SCSS", "Materialize CSS"],
-    githubUrl: "https://github.com/Mister905/portfolio_spa",
-    liveUrl: "#",
-  },
-  {
-    id: 2,
-    title: "SaaS Application",
-    description: "Full-stack SaaS solution for public-sector systems with robust backend processing and user-focused interfaces.",
-    technologies: ["React", "Node.js", "MongoDB", "JWT", "Express"],
-  },
-  {
-    id: 3,
-    title: "E-commerce Platform",
-    description: "Complete e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    technologies: ["React", "Redux", "Node.js", "PostgreSQL", "Stripe"],
+    title: "Pokemon App",
+    description: "Full-stack Pokemon application with user authentication, favorites system, and notes management. Features Redux state management, Docker containerization, and comprehensive loading states. Built with modern React patterns and deployed on AWS EC2.",
+    technologies: ["React", "TypeScript", "NestJS", "Redux", "Docker", "AWS EC2", "SCSS", "Materialize CSS", "Formik", "Vite"],
+    githubUrl: "https://github.com/Mister905/pokemon_react_typescript_nest",
+    liveUrl: "http://44.222.182.174:5173",
   },
 ];
 
@@ -142,11 +138,12 @@ const App: React.FC = () => {
       <nav className="navbar-fixed">
         <div className="nav-wrapper container">
           <a href="#home" className="brand-logo">
-            <img src={heraldry} alt="JM" className="nav-logo" />
+            <img src={heraldry} alt="James McCarthy" className="nav-logo" />
+            <span className="brand-text">James McCarthy</span>
           </a>
-          <a href="#" className="sidenav-trigger" onClick={toggleMenu}>
+          <button className="sidenav-trigger" onClick={toggleMenu} type="button">
             <i className="material-icons">menu</i>
-          </a>
+          </button>
           <ul className="right hide-on-med-and-down">
             {navigationItems.map((item) => (
               <li key={item.id}>
@@ -214,14 +211,23 @@ const App: React.FC = () => {
               <h2 className="section-title">About Me</h2>
               <div className="about-content">
                 <p className="about-text">
-                  I'm a passionate full-stack developer with extensive experience in delivering 
-                  SaaS solutions for critical public-sector systems. My expertise spans from 
-                  frontend React applications to robust backend services, with a strong focus 
-                  on clean, maintainable code and user-centered design.
+                  I'm a full-stack developer with several years of experience building and maintaining 
+                  software for public-sector and telecom platforms. I focus on performance, maintainability, 
+                  and user experience, with expertise spanning from frontend React applications to robust 
+                  backend services using modern technologies like NestJS, SQL, and legacy systems.
                 </p>
                 <p className="about-text">
-                  When I'm not coding, you'll find me exploring new technologies, contributing 
-                  to open-source projects, or enjoying the beautiful landscapes around Hamilton, ON.
+                  My experience includes developing SaaS tools for U.S. state agencies managing disaster 
+                  relief funding, as well as full-stack software for ISP operations including service 
+                  provisioning, broadband metrics, and hardware inventory. I've delivered on-call support 
+                  to international clients, resolving time-sensitive bugs and access issues while building 
+                  RESTful APIs and interactive data visualizations for monitoring network traffic and performance.
+                </p>
+                <p className="about-text">
+                  I value clear communication, curiosity, and thoughtful collaboration. I look for ways 
+                  to improve my craft and support teammates, whether through code reviews, documentation, 
+                  or asking good questions. When I'm not coding, you'll find me exploring new technologies 
+                  or enjoying the beautiful landscapes around Hamilton, ON.
                 </p>
               </div>
             </div>
@@ -234,26 +240,17 @@ const App: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Skills & Technologies</h2>
           <div className="skills-grid">
-            {['frontend', 'backend', 'tools'].map(category => (
+            {['frontend', 'backend', 'tools', 'other'].map(category => (
               <div key={category} className="skill-category">
                 <h3 className="category-title">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category === 'other' ? 'General Skills' : category.charAt(0).toUpperCase() + category.slice(1)}
                 </h3>
                 <div className="skills-list">
                   {skills
                     .filter(skill => skill.category === category)
                     .map((skill, index) => (
                       <div key={skill.name} className="skill-item">
-                        <div className="skill-info">
-                          <span className="skill-name">{skill.name}</span>
-                          <span className="skill-percentage">{skill.level}%</span>
-                        </div>
-                        <div className="skill-bar">
-                          <div 
-                            className="skill-progress" 
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
+                        <span className="skill-name">{skill.name}</span>
                       </div>
                     ))}
                 </div>
@@ -266,7 +263,7 @@ const App: React.FC = () => {
       {/* Projects Section */}
       <section id="projects" className="section projects-section">
         <div className="container">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">Featured Project</h2>
           <div className="projects-grid">
             {projects.map((project) => (
               <div key={project.id} className="project-card">
