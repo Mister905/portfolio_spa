@@ -6,6 +6,3 @@
   NODE_VERSION = "18.14.0"
   NPM_VERSION = "8.19.4"
   YARN_VERSION = "1.22.22"
-
-[[plugins]]
-  package = "@netlify/plugin-node-version"

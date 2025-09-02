@@ -310,6 +310,24 @@ body {
               box-shadow: var(--shadow-lg);
             }
           }
+
+          &.btn-outline {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: white;
+            backdrop-filter: blur(10px);
+
+            &:hover {
+              background: white;
+              color: var(--primary-color);
+              transform: translateY(-2px);
+              box-shadow: var(--shadow-lg);
+            }
+
+            .material-icons {
+              font-size: 1.2rem;
+            }
+          }
         }
       }
     }

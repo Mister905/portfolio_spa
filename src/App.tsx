@@ -191,6 +191,14 @@ const App: React.FC = () => {
                 <a href="#contact" className="btn btn-secondary">
                   Get In Touch
                 </a>
+                <a 
+                  href="/resume.pdf" 
+                  download="James_McCarthy_Resume.pdf" 
+                  className="btn btn-outline"
+                >
+                  <i className="material-icons left">download</i>
+                  Download Resume
+                </a>
               </div>
             </div>
             <div className="hero-image">
