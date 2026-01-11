@@ -122,19 +122,6 @@ const Projects: React.FC<ProjectsProps> = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                {project.liveDemo && (
-                  // @ts-expect-error - Framer Motion v6 type definitions issue
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 bg-accent text-gray-900 font-semibold rounded-lg hover:bg-accent-light transition-all duration-300 inline-block"
-                    >
-                      Live Demo
-                    </a>
-                  </motion.div>
-                )}
                 {project.sourceCode && (
                   // @ts-expect-error - Framer Motion v6 type definitions issue
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
