@@ -1,150 +1,139 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import triviaMasterImage from '../assets/trivia_master.png';
 
-interface ProjectsProps {}
-
-interface Project {
+interface ProjectData {
   title: string;
-  subtitle: string;
   description: string;
-  contributions: string[];
-  techStack: string;
+  details: string;
+  highlights: string[];
+  techStack: string[];
+  image?: string;
   liveDemo?: string;
   sourceCode?: string;
 }
 
-const Projects: React.FC<ProjectsProps> = () => {
+const PROJECTS: ProjectData[] = [
+  {
+    title: 'Trivia Master',
+    description:
+      "I'm a longtime fan of Jeopardy and trivia. Trivia Master is a single-player, Jeopardy-style web app I built for fun and practice. You sign in, create a game, and play through three rounds: Jeopardy, Double Jeopardy, and Final Jeopardy. You pick clues, reveal answers, and mark yourself right or wrong. Daily Doubles and Final Jeopardy let you wager within the rules. I wanted a project that put game logic on the server and kept the frontend focused on display and input.",
+    details:
+      "The backend (NestJS) owns all game rules, scoring, and wager validation. The frontend (Next.js) is a thin client. It shows what the server sends and sends actions back; it does not decide outcomes. Clue data is loaded into Postgres from TSV files via scripts, not from a live external API. Auth is Supabase; the API checks the JWT and scopes every action to the signed-in user. I run it locally with Docker Compose and deploy the backend to AWS ECS and the frontend to S3 behind CloudFront, with GitHub Actions for tests and deploys.",
+    highlights: [
+      'Backend-authoritative design: rules and state live in one place on the server.',
+      'Clear API and schema so the frontend stays simple and testable.',
+      'Full three-round flow with Daily Doubles and Final Jeopardy wagering.',
+      'Documented so other engineers can follow the design.',
+    ],
+    techStack: [
+      'Next.js 14',
+      'TypeScript',
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'Supabase',
+      'Tailwind CSS',
+      'Docker',
+      'AWS ECS',
+      'S3 & CloudFront',
+    ],
+    sourceCode: 'https://github.com/Mister905/trivia_master',
+    image: triviaMasterImage,
+  },
+];
 
-  const projects: Project[] = [
-    {
-      title: 'Airbnb Tracker',
-      subtitle: 'Full-Stack Listing Change Detection Platform',
-      description:
-        'A full-stack web application that tracks and compares changes in Airbnb listings over time, including pricing, amenities, photos, and reviews. The platform captures daily snapshots, stores historical versions, and presents side by side comparisons to highlight changes clearly.',
-      contributions: [
-        'Built automated data collection using Apify and scheduled NestJS cron jobs',
-        'Designed a PostgreSQL schema with Prisma ORM to support versioned snapshots',
-        'Developed a responsive frontend using Next.js 14 and TypeScript',
-        'Implemented side by side diff views for listing comparisons',
-        'Integrated Supabase authentication to secure user access',
-        'Containerized development using Docker Compose',
-        'Deployed the application to Vercel with a production ready pipeline',
-      ],
-      techStack: 'Next.js, TypeScript, NestJS, PostgreSQL, Prisma, Redux Toolkit, Tailwind CSS, Supabase, Docker',
-      liveDemo: 'https://airbnb-tracker-beta.vercel.app',
-      sourceCode: 'https://github.com/Mister905/airbnb_tracker',
-    },
-  ];
+const ProjectImagePlaceholder: React.FC<{ title: string }> = ({ title }) => (
+  <div
+    className="w-full aspect-video bg-heraldic-navy rounded-lg flex items-center justify-center text-heraldic-gold/60 border border-heraldic-gold/20"
+    aria-hidden="true"
+  >
+    <span className="text-sm font-medium">{title}</span>
+  </div>
+);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
+const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="py-20 md:py-32 bg-gray-900 text-gray-100"
+      aria-labelledby="projects-heading"
+      className="py-16 md:py-24 bg-heraldic-charcoal text-gray-100"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          {/* @ts-expect-error - Framer Motion v6 type definitions issue */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Featured <span className="text-accent">Project</span>
-            </h2>
-            <div className="w-24 h-1 bg-accent mx-auto" />
-          </motion.div>
-        </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="projects-heading" className="text-3xl md:text-4xl font-bold mb-2 text-white">
+          Featured Projects
+        </h2>
+        <p className="text-gray-400 mb-12 max-w-2xl">
+          Selected work showing problem-solving, stack, and outcomes.
+        </p>
 
-        {/* @ts-expect-error - Framer Motion v6 type definitions issue */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
-          <div className="max-w-4xl mx-auto">
-          {projects.map((project) => (
-            // @ts-expect-error - Framer Motion v6 type definitions issue
-            <motion.div
-              key={project.title}
-              variants={cardVariants}
-            >
-              <article className="bg-gray-800 rounded-lg p-8 md:p-12 border border-gray-700 hover:border-accent transition-all duration-300">
-              <h3 className="text-3xl md:text-4xl font-bold mb-2 text-accent">
-                {project.title}
-              </h3>
-              <p className="text-xl text-gray-300 mb-6">{project.subtitle}</p>
-
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              <h4 className="text-xl font-semibold mb-4 text-accent">
-                Key Contributions
-              </h4>
-              <ul className="space-y-2 mb-6">
-                {project.contributions.map((contribution, index) => (
-                  <li
-                    key={index}
-                    className="text-gray-300 flex items-start before:content-['▹'] before:text-accent before:mr-2 before:mt-1 before:flex-shrink-0"
-                  >
-                    {contribution}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-gray-300 mb-6">
-                <strong className="text-accent">Tech Stack:</strong>{' '}
-                {project.techStack}
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                {project.sourceCode && (
-                  // @ts-expect-error - Framer Motion v6 type definitions issue
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <a
-                      href={project.sourceCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent hover:text-gray-900 transition-all duration-300 inline-block"
-                    >
-                      Source Code
-                    </a>
-                  </motion.div>
-                )}
-              </div>
+        <ul className="space-y-16 md:space-y-20">
+          {PROJECTS.map((project, index) => (
+            <li key={project.title}>
+              <article className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                <div className="w-full lg:w-2/5 shrink-0">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt=""
+                      className="w-full aspect-video object-contain bg-black rounded-lg border border-heraldic-gold/25"
+                    />
+                  ) : (
+                    <ProjectImagePlaceholder title={project.title} />
+                  )}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
+                    {project.title}
+                  </h3>
+                  <div className="space-y-4 text-sm md:text-base text-gray-300">
+                    <p className="leading-relaxed">{project.description}</p>
+                    <p className="leading-relaxed">{project.details}</p>
+                    <ul className="space-y-1.5 list-disc list-inside">
+                      {project.highlights.map((highlight, i) => (
+                        <li key={i}>{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full text-xs font-medium bg-heraldic-navy text-gray-300 border border-heraldic-gold/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    {project.sourceCode && (
+                      <a
+                        href={project.sourceCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent font-medium hover:text-accent-light focus:outline-none focus:underline"
+                      >
+                        GitHub →
+                      </a>
+                    )}
+                    {project.liveDemo && (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent font-medium hover:text-accent-light focus:outline-none focus:underline"
+                      >
+                        Live demo →
+                      </a>
+                    )}
+                  </div>
+                </div>
               </article>
-            </motion.div>
+            </li>
           ))}
-          </div>
-        </motion.div>
+        </ul>
       </div>
     </section>
   );
 };
 
 export default Projects;
-

@@ -7,9 +7,15 @@ module.exports = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: '#10b981',
-          dark: '#059669',
-          light: '#34d399',
+          DEFAULT: '#c9a227',
+          dark: '#a88622',
+          light: '#ddb84b',
+        },
+        heraldic: {
+          gold: '#c9a227',
+          red: '#b91c1c',
+          charcoal: '#1c1917',
+          navy: '#1e293b',
         },
       },
       animation: {
