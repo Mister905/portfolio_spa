@@ -38,6 +38,7 @@ const PROJECTS: ProjectData[] = [
       'S3 & CloudFront',
     ],
     sourceCode: 'https://github.com/Mister905/trivia_master',
+    liveDemo: 'https://www.triviamaster.dev',
     image: triviaMasterImage,
   },
 ];
@@ -72,11 +73,26 @@ const Projects: React.FC = () => {
               <article className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                 <div className="w-full lg:w-2/5 shrink-0">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt=""
-                      className="w-full aspect-video object-contain bg-black rounded-lg border border-heraldic-gold/25"
-                    />
+                    project.liveDemo ? (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg border border-heraldic-gold/25 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-heraldic-charcoal"
+                      >
+                        <img
+                          src={project.image}
+                          alt=""
+                          className="w-full aspect-video object-contain bg-black rounded-lg"
+                        />
+                      </a>
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt=""
+                        className="w-full aspect-video object-contain bg-black rounded-lg border border-heraldic-gold/25"
+                      />
+                    )
                   ) : (
                     <ProjectImagePlaceholder title={project.title} />
                   )}
@@ -105,16 +121,6 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                   <div className="mt-6 flex flex-wrap gap-4">
-                    {project.sourceCode && (
-                      <a
-                        href={project.sourceCode}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-accent font-medium hover:text-accent-light focus:outline-none focus:underline"
-                      >
-                        GitHub →
-                      </a>
-                    )}
                     {project.liveDemo && (
                       <a
                         href={project.liveDemo}
@@ -123,6 +129,16 @@ const Projects: React.FC = () => {
                         className="text-accent font-medium hover:text-accent-light focus:outline-none focus:underline"
                       >
                         Live demo →
+                      </a>
+                    )}
+                    {project.sourceCode && (
+                      <a
+                        href={project.sourceCode}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent font-medium hover:text-accent-light focus:outline-none focus:underline"
+                      >
+                        GitHub →
                       </a>
                     )}
                   </div>
