@@ -37,7 +37,7 @@ const PROJECTS: ProjectData[] = [
       'AWS ECS',
       'S3 & CloudFront',
     ],
-    sourceCode: 'https://github.com/Mister905/trivia_master',
+    sourceCode: 'https://github.com/Mister905/jeopardy',
     liveDemo: 'https://www.triviamaster.dev',
     image: triviaMasterImage,
   },
